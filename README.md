@@ -21,6 +21,10 @@ NB: Make sure Docker is installed on machine and running
 
 In this example the token ID has the USDT contract address encoded and a value of 999 units
 
+To run tests use:
+
+> docker-compose exec server python -m pytest
+
 ### Roadmap
 
 Proof-of-concept:
