@@ -34,20 +34,20 @@ def generate_image(token_id: int):
         token_symbol = "ETH"
         token_amount = Web3.fromWei((token_id & ((1 << 96) - 1)) - (token_id & (1 << 96)), unit='ether')
 
-    token_symbol_font = ImageFont.truetype("fonts/CourierPrime-Bold.ttf", 30)
-    token_amount_font = ImageFont.truetype("fonts/CourierPrime-Regular.ttf", 30)
-    token_name_font = ImageFont.truetype("fonts/CourierPrime-Bold.ttf", 10)
-    token_address_font = ImageFont.truetype("fonts/CourierPrime-Regular.ttf", 8)
+    token_symbol_font = ImageFont.truetype("fonts/CourierPrime-Bold.ttf", 110)
+    token_amount_font = ImageFont.truetype("fonts/CourierPrime-Regular.ttf", 110)
+    token_name_font = ImageFont.truetype("fonts/CourierPrime-Bold.ttf", 40)
+    token_address_font = ImageFont.truetype("fonts/CourierPrime-Regular.ttf", 25)
 
     img = Image.open("base_ticket.png")
     d = ImageDraw.Draw(img)
-    d.text((102, 90), token_symbol, align=1, font=token_symbol_font, anchor='ms', fill=(0, 0, 0))
-    d.text((200, 90), str(token_amount), align=0, font=token_amount_font, anchor='ls', fill=(0, 0, 0))
-    d.text((200, 110), token_name, align=0, font=token_name_font, anchor='ls', fill=(0, 0, 0))
-    d.text((200, 120), str(token_address), align=0, font=token_address_font, anchor='ls', fill=(0, 0, 0))
+    d.text((310, 265), token_symbol, align=1, font=token_symbol_font, anchor='ms', fill=(0, 0, 0))
+    d.text((610, 265), str(token_amount), align=0, font=token_amount_font, anchor='ls', fill=(0, 0, 0))
+    d.text((610, 325), token_name, align=0, font=token_name_font, anchor='ls', fill=(0, 0, 0))
+    d.text((610, 355), str(token_address), align=0, font=token_address_font, anchor='ls', fill=(0, 0, 0))
 
-    return img
     #img.show()
+    return img
 
 
 #generate_image(10000000000000000)
