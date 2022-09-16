@@ -28,9 +28,9 @@ def generate_image(token_id: int):
     token_address = hex(int(token_id >> 96 & ((1 << 160) - 1)) - (token_id >> 96 & (1 << 160)))
     if token_address != '0x0':
         token_name, token_symbol = get_token_info(token_address)
-        token_amount = (token_id & ((1 << 96) - 1)) - (token_id & (1 << 96))
+        token_amount = Web3.fromWei((token_id & ((1 << 96) - 1)) - (token_id & (1 << 96)), unit='ether')
     else:
-        token_name = "Ethereum"
+        token_name = "Ether"
         token_symbol = "ETH"
         token_amount = Web3.fromWei((token_id & ((1 << 96) - 1)) - (token_id & (1 << 96)), unit='ether')
 
